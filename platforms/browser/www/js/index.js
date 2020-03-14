@@ -6,11 +6,20 @@ $(document).ready(function(){
         if( localStorage.getItem("gameState") == 2) window.location = "finished.html";
     }
 
+    if( localStorage.getItem("approvedCookies")===null ){
+        document.getElementById("cookieAlertOverlay").style="display:block;";
+    }
+
     $("#startGameBtn").on("touchup click",function(){
         localStorage.gameState = 1;
         localStorage.tasksSolved = "[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]";
         localStorage.taskOrder = "[3,11,7,0,1,2,10,9,13,12,16,4,6,15,14,5,8,17]"; // 3,4,5,0,11,15,12,2,16,7,6,1,9,8,14,13,10,17
         window.location = "/search.html";
+    });
+
+    $("#agreeToCookies").on("touchup click",function(){
+        localStorage.approvedCookies = 1;
+        $("#cookieAlertOverlay").fadeOut(100);
     });
 
 });
