@@ -57,8 +57,8 @@ body.search-page {
   font-weight: bold;
 }
 .button.primary {
-  background-color: #fbffcd;
-  border: 1vw solid #eec900;
+  background-color: #fffcf4;
+  border: 1vw solid #ffda13;
 }
 
 .icon {
@@ -93,7 +93,7 @@ body.search-page {
 .logos {
   position: absolute;
   left: 0vw;
-  bottom: 7vw;
+  bottom: 12vw;
   height: 15vh;
   margin: 0vw 5vw;
   width: 90vw;
@@ -107,9 +107,10 @@ body.search-page {
 
 .credits {
   position: absolute;
-  bottom: 1vw;
+  bottom: 2vw;
   left: 0;
   width: 100%;
+  line-height: 1;
   font-size: 4vw;
   text-align: center;
   color: #96650a;
