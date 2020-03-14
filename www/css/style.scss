@@ -58,6 +58,11 @@ body{
     text-transform: uppercase;
     text-align: center;
     font-weight: bold;
+
+    &.primary{
+        background-color: #fbffcd;
+        border: 1vw solid #eec900;
+    }
 }
 
 .icon{
