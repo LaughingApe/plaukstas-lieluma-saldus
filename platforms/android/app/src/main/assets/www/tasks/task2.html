@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        
+        <meta name="task-number" id="task-number" content="2">
+
+        <link href="../fontawsome/css/fontawesome-all.css" rel="stylesheet">
+
+        <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="../js/task2.js"></script>
+        <script type="text/javascript" src="../js/script.js"></script>
+        <script type="text/javascript" src="../js/task.js"></script>
+        
+        <link rel="stylesheet" type="text/css" href="../css/style.css">
+        
+        <title>Plaukstas lieluma Saldus</title>
+    </head>
+    <body>
+        <div class="reading">
+            <div class="reading-block">
+                <h1>Izlasi!</h1>
+                <p>1856. gadā tika dibināts tirdzniecības miests Frauenburga (Saldus). Tagadējā Kalpaka laukuma vietā atradās tirgus.</p>
+                <img src="../img/task2/tirgus.jpg" class="big-img"/>
+                <p>Kā redzams attēlā, 19. gadsimta beigās cilvēki izskatījās citādi. Viņi nēsāja citādāku apģērbu, nekā mēs šodien. Arī viņu frizūras atšķiras no mūsdienu cilvēku  frizūrām. Atšķirības nav tikai ārējas. Agrākos laikos cilvēki mēdza lietot vārdus, kādus mēs vairs nelietojam. Tādus vārdus sauc par senvārdiem. Piemēram,</p>
+            </div>
+            <div class="img-card">
+                <p class="label">pletīzers</p>
+                <img src="../img/task2/pletizers.jpg" class="change-img" data-choice="0"/>
+            </div>
+            <div class="button readingBtn">Uz uzdevumu!</div>
+        </div>
+        <div class="task">
+            <div class="task-block">
+                <h2>Savietojiet Saldū lietotus senvārdus ar atbilstošajiem attēliem!</h2>
+                <p>Spiežot uz bildi, tā mainīsies. Pie katra vārda jābūt atbilstošajam attēlam.</p>
+            </div>
+            
+            <div class="img-card">
+                <p class="label">naģe</p>
+                <img src="../img/task2/img0.jpg" class="change-img" data-choice="0" id="img1"/>
+            </div>
+            <div class="img-card">
+                <p class="label">bambāle</p>
+                <img src="../img/task2/img5.jpg" class="change-img" data-choice="5" id="img2"/>
+            </div>
+            <div class="img-card">
+                <p class="label">šķiņķis</p>
+                <img src="../img/task2/img2.jpg" class="change-img" data-choice="2" id="img0"/>
+            </div>
+            <div class="img-card">
+                <p class="label">rinduks</p>
+                <img src="../img/task2/img1.jpg" class="change-img" data-choice="1" id="img4"/>
+            </div>
+            <div class="img-card">
+                <p class="label">grāpis</p>
+                <img src="../img/task2/img6.jpg" class="change-img" data-choice="6" id="img3"/>
+            </div>
+            <div class="img-card">
+                <p class="label">čočis</p>
+                <img src="../img/task2/img4.jpg" class="change-img" data-choice="4" id="img6"/>
+            </div>
+            <div class="img-card">
+                <p class="label">ambīlis</p>
+                <img src="../img/task2/img3.jpg" class="change-img" data-choice="3" id="img5"/>
+            </div>
+            <div class="button" id="saveAnswerBtn">Iesniegt atbildi</div>
+            <div class="button readingBtn">Atpakaļ</div>
+        </div>
+    </body>
+</html>

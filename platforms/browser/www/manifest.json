@@ -1,0 +1,17 @@
+{
+  "background_color": "#FFF",
+  "display": "standalone",
+  "name": "Plaukstas lieluma Saldus",
+  "short_name": "Plaukstas lieluma Saldus",
+  "version": "io.cordova.hellocordova",
+  "description": "Kulturālas izklaides spēle Saldū.",
+  "author": "Niks Derums",
+  "icons": [
+    {
+      "src": "www/img/logo.png",
+      "type": "image/png",
+      "sizes": "undefinedxundefined"
+    }
+  ],
+  "start_url": "index.html"
+}

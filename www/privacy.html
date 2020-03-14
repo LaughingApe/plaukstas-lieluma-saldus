@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+
+        <link href="fontawsome/css/fontawesome-all.css" rel="stylesheet">
+
+        <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="correct-answers.json"></script>
+        <script type="text/javascript" src="js/script.js"></script>
+        <script type="text/javascript" src="js/endgame.js"></script>
+        
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        
+        <title>Plaukstas lieluma Saldus</title>
+    </head>
+    <body>
+        <div class="container">
+            <h1>Privātuma politika</h1>
+            <h2>Atrašanās vietas dati</h2>
+            <p>Tīmekļa lietotne "Plaukstas lieluma Saldus" izmanto jūsu tālruņa atrašanās vietas datus, lai nodrošinātu spēles pamata funkcionalitāti — noteiktu, vai spēlētājs ir pietuvojies uzdevuma objektam, kā arī uzrādītu attālumu līdz tuvākajam uzdevuma objektam. Atrašanās vietas dati netiek sūtīti pa tīklu un paliek jūsu ierīcē. Tie netiek glabāti un izzūd, kad aizverat uzdevuma meklēšanas lapu.</p>
+            <h2>Sīkdatnes</h2>
+            <p>Tīmekļa lietotne "Plaukstas lieluma Saldus" neizmanto un neglabā sīkdatnes (<i>cookies</i>). Taču tiek izmantota līdzīga datu glabāšanas tehnoloģija — HTML5 vietējā krātuve jeb <i>local storage</i>, par ko var lasīt nākamajā sadaļā.</p>
+            <h2>Vietējā krātuve</h2>
+            <p>HTML5 vietējā krātuve jeb <i>local storage</i> tiek izmantota, lai saglabātu pašreizējo spēles stāvokli un iesniegtās atbildes. Tā ir pastāvīgā krātuve, tātad dati nepazūd un spēli var atsākt jebkurā brīdī. Pēc rezultātu apskatīšanas, spiežot "Beigt spēli", šie dati tiek notīrīti no jūsu ierīces.</p>
+        </div>
+        
+        <a href="index.html" class="button">Atpakaļ</a>
+    </body>
+</html>

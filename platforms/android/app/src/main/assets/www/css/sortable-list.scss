@@ -1,0 +1,35 @@
+ul.sortable {
+    display: block; 
+    list-style: none; 
+    
+    & > li {
+        display: grid;
+        grid-template-columns: 1fr 5fr;
+        grid-template-rows: 1fr 1fr;
+    
+        box-shadow: 0px 3px 5px 1px rgba(0,0,0,0.3);
+
+        margin-bottom: 3vh;
+
+        img{
+            grid-row: span 2; 
+            width: 100%;   
+        }
+
+        .up, .down{
+            text-align: center;
+            font-size: 6vw;
+            
+            background-color: #444;
+
+            color: white;
+            i{
+                position: relative;
+                top: 23%;
+            }
+        }
+        .up{
+            border-bottom: 1px solid #777;
+        }
+    }
+}

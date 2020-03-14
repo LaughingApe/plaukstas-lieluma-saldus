@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<!--
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
+<html>
+    <head>
+        <!--
+        Customize this policy to fit your own app's needs. For more guidance, see:
+            https://github.com/apache/cordova-plugin-whitelist/blob/master/README.md#content-security-policy
+        Some notes:
+            * gap: is required only on iOS (when using UIWebView) and is needed for JS->native communication
+            * https://ssl.gstatic.com is required only on Android and is needed for TalkBack to function properly
+            * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
+                * Enable inline JS: add 'unsafe-inline' to default-src
+        -->
+        <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
+        <meta name="format-detection" content="telephone=no">
+        <meta name="msapplication-tap-highlight" content="no">
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
+        
+        <meta name="task-number" id="task-number" content="6">
+
+        <link href="../fontawsome/css/fontawesome-all.css" rel="stylesheet">
+
+        <script type="text/javascript" src="../js/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="../js/task6.js"></script>
+        <script type="text/javascript" src="../js/script.js"></script>
+        <script type="text/javascript" src="../js/task.js"></script>
+        
+        <link rel="stylesheet" type="text/css" href="../css/style.css">
+        
+        <title>Plaukstas lieluma Saldus</title>
+    </head>
+    <body>
+        <div class="reading">
+            <div class="reading-block">
+                <img src="../img/task6/maris.jpg" class="big-img"/>
+                <h1>Izlasi!</h1>
+                <p>Jūs atrodaties dzejnieka Māra Čaklā skvērā. Dzejnieks ir dzimis Saldū. Savos dzejoļos dzimto vietu arī pieminējis, salīdzinādams Saldu ar medus pilienu Kurzemē, veltīdams Saldum dzejoli „Saldus saule”.</p>
+                <p>Māra Čaklā dzeju daudzi komponisti izmantojuši savās dziesmās. Kopumā zināmas 289 dziesmas ar viņa vārdiem. Ieskatam daži dzejoļi, kuri ir pārtapuši Latvijā populārās dziesmās.</p>
+            </div>
+            <div class="button readingBtn">Uz uzdevumu!</div>
+        </div>
+        <div class="task">
+            <div class="task-block">
+                <h2>Izlasiet dzejoļu fragmentus un pielieciet tiem atbilstošos dzejoļu nosaukumus!</h2>
+                <p>Spiežot uz virsraksta, tas mainīsies. Pie katra dzejoļa jābūt atbilstošajam virsrakstam.</p>
+            </div>
+
+            <div class="poem-box">
+                <h3 class="change-header" data-choice="1" id="head5"></h3>
+                <div class="poem">
+                    <p>Pilsētā, kurā piedzimst vējš,<br/>
+                    varen varoša vārna zarā sēž,<br/>
+                    jumtu plēš vējš, bet nenoplēš<br/>
+                    pilsētā, kurā piedzimst vējš.</p>
+                </div>
+            </div>
+            
+            <div class="poem-box">
+                <h3 class="change-header" data-choice="5" id="head0"></h3>
+                <div class="poem">
+                    <p>Uzsniga sniedziņš balts,<br/>
+                    smalks kā vissmalkākie milti.<br/>
+                    Uzsniga sniedziņš balts,<br/>
+                    zemei palika silti.</p>
+                    <p>Vienmēr uz pasaules kāds,<br/>
+                    kuram bez tevis ir auksti<br/>
+                    un pat aiz pasaules vēl<br/>
+                    vajaga siltas plaukstas.</p>
+                </div>
+            </div>
+
+            <div class="poem-box">
+                <h3 class="change-header" data-choice="0" id="head2"></h3>
+                <div class="poem">
+                    <p>Atkal, atkal ir debesis pušu,<br/>
+                    Atkal ielāpi jāuzliek tām.<br/>
+                    Sanāk, sanāk, kas samaksājuši,<br/>
+                    Zem šīm baltajām akācijām.<br/>
+                    Tas ir nieks dzīvu uguni norīt,<br/>
+                    Ja tik aliņš ir virsū, ko dzert.<br/>
+                    Tikpat labi bez alus var noreibt<br/>
+                    No vistukšākās pudeles dzert.</p>
+                </div>
+            </div>
+
+            <div class="poem-box">
+                <h3 class="change-header" data-choice="2" id="head3"></h3>
+                <div class="poem">
+                    <p>Jānītis ir vēl mazs.<br/>
+                    Saulē iededzis strīpains.<br/>
+                    Jo viņš aiz sētas tup.<br/>
+                    Jānītis pīpē.</p>
+                    <p>Trīs gadi pagājuši.<br/>
+                    Kas tur tik smagi kāsē?<br/>
+                    Jānītis grantsbedrē pīpē.<br/>
+                    Jānītis tai pašā klasē.</p>
+                    <p>Jānītis tikpat gudrs.<br/>
+                    Nu jau bāls, ne vairs strīpains.<br/>
+                    Jānītis tikpat garš.<br/>
+                    Jānītis pīpē.</p>
+                </div>
+            </div>
+
+            <div class="poem-box">
+                <h3 class="change-header" data-choice="4" id="head4"></h3>
+                <div class="poem">
+                    <p>Starp mašīnām, motoriem, meitenēm<br/>
+                    Uz ielu stūriem, kas salst;<br/>
+                    Starp rēcieniem, rūcieniem, svilpieniem<br/>
+                    Murgs vai sveiciens<br/>
+                    Dzeguzes balss!</p>
+                </div>
+            </div>
+
+            <div class="poem-box">
+                <h3 class="change-header" data-choice="3" id="head1"></h3>
+                <div class="poem">
+                    <p>Aprīlim, aprīlim<br/>
+                    pilieni nav kā līdz šim.<br/>
+                    Kopā pilieni pa trim,<br/>
+                    trim tirim, aprīlim.</p>
+                </div>
+            </div>
+            
+            <div class="button" id="saveAnswerBtn">Iesniegt atbildi</div>
+            <div class="button readingBtn">Atpakaļ</div>
+        </div>
+    </body>
+</html>
