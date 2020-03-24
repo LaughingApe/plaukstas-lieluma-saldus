@@ -292,6 +292,4 @@ $(document).ready(function(){
         generateScore();
         generateAnswerView();
     });
-
-    
 });

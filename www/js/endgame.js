@@ -1,7 +1,7 @@
 function endgame(){
     localStorage.removeItem("gameState");
     localStorage.removeItem("tasksSolved");
-    for(var i = 0; i<18; i++){
+    for(var i = 0; i<17; i++){
         localStorage.removeItem("answer"+i);
     }
     window.location = "index.html";

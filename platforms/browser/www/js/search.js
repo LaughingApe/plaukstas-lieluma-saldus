@@ -29,8 +29,9 @@ function checkPosition(position){
     });
 
     var tasksSolved = JSON.parse( localStorage.getItem("tasksSolved") );
+    var taskOrder = JSON.parse( localStorage.getItem("taskOrder") );
     var closestId = -1;
-    for(var i = 0; i<locations.length; i++)
+    for(var i of taskOrder)
         if( tasksSolved[i] == 0 ) { closestId=i; break; }
     
     if( closestId==-1 ){
@@ -39,7 +40,7 @@ function checkPosition(position){
     }
 
 
-    for(var i = closestId+1; i<locations.length; i++){
+    for(var i of taskOrder){
         if( tasksSolved[i]==0 )
             if( getDistanceFromLatLon(lat,lon,locations[i].lat,locations[i].lon)-locations[i].radius < 
                 getDistanceFromLatLon(lat,lon,locations[closestId].lat,locations[closestId].lon)-locations[closestId].radius  ){

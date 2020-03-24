@@ -13,7 +13,7 @@ $(document).ready(function(){
     $("#startGameBtn").on("touchup click",function(){
         localStorage.gameState = 1;
         localStorage.tasksSolved = "[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]";
-        localStorage.taskOrder = "[3,11,0,1,2,10,7,9,13,12,16,4,6,15,14,5,8,17]"; 
+        localStorage.taskOrder = "[3,11,0,1,2,10,7,9,13,12,16,4,6,15,14,8,17]"; 
         window.location = "/search.html";
     });
 
