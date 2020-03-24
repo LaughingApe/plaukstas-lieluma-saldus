@@ -8,7 +8,7 @@ function generateAnswerView(){
     var taskOrder = JSON.parse( localStorage.getItem("taskOrder") );
     for(var ind = 0; ind<taskOrder.length; ind++){
         i = taskOrder[ind];
-        content += "<b style='display:block;'>" + (ind+1) + ". uzdevums (maks. punti — " + maxscore[i] + ")</b>";
+        content += "<b style='display:block;'>" + (ind+1) + ". uzdevums (maks. punkti — " + maxscore[i] + ")</b>";
         if( solvedArr[i]==0 ){
             content += "<p>Šo uzdevumu neesat izpildījuši.</p>";
             continue;
