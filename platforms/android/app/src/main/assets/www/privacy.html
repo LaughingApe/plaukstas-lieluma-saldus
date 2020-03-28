@@ -28,41 +28,32 @@
             * Disables use of inline scripts in order to mitigate risk of XSS vulnerabilities. To change this:
                 * Enable inline JS: add 'unsafe-inline' to default-src
         -->
-        <meta charset="UTF-8">
         <meta http-equiv="Content-Security-Policy" content="default-src 'self' data: gap: https://ssl.gstatic.com 'unsafe-eval'; style-src 'self' 'unsafe-inline'; media-src *; img-src 'self' data: content:;">
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
-        
+
+        <link href="fontawsome/css/fontawesome-all.css" rel="stylesheet">
+
         <script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+        <script type="text/javascript" src="correct-answers.json"></script>
         <script type="text/javascript" src="js/script.js"></script>
-        <script type="text/javascript" src="js/index.js"></script>
         
         <link rel="stylesheet" type="text/css" href="css/style.css">
         
         <title>Plaukstas lieluma Saldus</title>
     </head>
     <body>
-        <img class="icon" src="img/logo.png" alt=""/>
-        <div class="title">Plaukstas lieluma Saldus</div>
-        <div class="central-list">
-            <a href="#" id="startGameBtn" class="button primary">Sākt spēli</a>
-            <a href="privacy.html" id="privacyPolicyBtn" class="button">Privātuma politika</a>
+        <div class="container">
+            <h1>Privātuma politika</h1>
+            <h2>Atrašanās vietas dati</h2>
+            <p>Tīmekļa lietotne "Plaukstas lieluma Saldus" izmanto jūsu tālruņa atrašanās vietas datus, lai nodrošinātu spēles pamata funkcionalitāti — noteiktu, vai spēlētājs ir pietuvojies uzdevuma objektam, kā arī uzrādītu attālumu līdz tuvākajam uzdevuma objektam. Atrašanās vietas dati netiek sūtīti pa tīklu un paliek jūsu ierīcē. Tie netiek glabāti un izzūd, kad aizverat uzdevuma meklēšanas lapu.</p>
+            <h2>Sīkdatnes</h2>
+            <p>Tīmekļa lietotne "Plaukstas lieluma Saldus" neizmanto un neglabā sīkdatnes (<i>cookies</i>). Taču tiek izmantota līdzīga datu glabāšanas tehnoloģija — HTML5 vietējā krātuve jeb <i>local storage</i>, par ko var lasīt nākamajā sadaļā.</p>
+            <h2>Vietējā krātuve</h2>
+            <p>HTML5 vietējā krātuve jeb <i>local storage</i> tiek izmantota, lai saglabātu pašreizējo spēles stāvokli un iesniegtās atbildes. Tā ir pastāvīgā krātuve, tātad dati nepazūd un spēli var atsākt jebkurā brīdī. Pēc rezultātu apskatīšanas, spiežot "Beigt spēli", šie dati tiek notīrīti no jūsu ierīces.</p>
         </div>
-        <div class="logos">
-            <img class="logo left" src="img/cemex.jpg" alt="Cemex iespēju fonda finansējums">
-            <img class="logo right"src="img/kapellerunams.jpg" alt='Biedrības "Kapelleru nams" projekts'><br/>
-        </div>
-        <div class="credits">Visas tiesības paturētas © 2018–2020<br/>Lietotni veidoja Niks Derums</div>
-
-        <div class="dark-overlay" id="cookieAlertOverlay">
-            <div id="cookieAlert">
-                <div class="alert-title">Sīkdatnes</div>
-                <div class="content">Lai gan "Plaukstas lieluma Saldus" neizmanto sīkdatnes (<i>cookies</i>), tomēr daži dati tiek glabāti ar līdzīgu tehnoloģiju – vietējo krātuvi (<i>local storage</i>). Uzziniet vairāk sadaļā <a href="/privacy.html">Privātuma politika</a>!</div>
-                <div class="agree-container">
-                    <div class="agree-button" id="agreeToCookies">Piekrītu</div>
-                </div>
-            </div>
-        </div>
+        
+        <a href="index.html" class="button">Atpakaļ</a>
     </body>
 </html>

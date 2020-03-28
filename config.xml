@@ -32,4 +32,6 @@
     <plugin name="cordova-plugin-browsersync" spec="^1.1.0" />
     <engine name="android" spec="^7.0.0" />
     <engine name="browser" spec="^5.0.3" />
+
+    <preference name="android-targetSdkVersion" value="29"/>
 </widget>

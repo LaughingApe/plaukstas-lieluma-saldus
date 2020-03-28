@@ -1,8 +1,8 @@
 function endgame(){
-    localStorage.gameState = 0;
-    localStorage.tasksSolved = "[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]";
-    for(var i = 0; i<18; i++){
-        localStorage.setItem("answer"+i,"");
+    localStorage.removeItem("gameState");
+    localStorage.removeItem("tasksSolved");
+    for(var i = 0; i<17; i++){
+        localStorage.removeItem("answer"+i);
     }
     window.location = "index.html";
 }

@@ -1,4 +1,4 @@
-#Thu Sep 27 19:21:33 EEST 2018
-base.0=/home/niks/kapelleruApp/platforms/android/app/build/intermediates/transforms/dexMerger/debug/0
+#Sat Mar 28 12:07:04 EET 2020
+base.0=/home/niks/Projects/kapelleruApp/platforms/android/app/build/intermediates/transforms/dexMerger/debug/0
 renamed.0=classes.dex
-file.0=/home/niks/kapelleruApp/platforms/android/app/build/intermediates/transforms/dexMerger/debug/0/classes.dex
+file.0=/home/niks/Projects/kapelleruApp/platforms/android/app/build/intermediates/transforms/dexMerger/debug/0/classes.dex
