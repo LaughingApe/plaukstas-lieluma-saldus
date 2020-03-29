@@ -14,7 +14,13 @@ $(document).ready(function(){
         localStorage.gameState = 1;
         localStorage.tasksSolved = "[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]";
         localStorage.taskOrder = "[3,11,0,1,2,10,7,9,13,12,16,4,6,15,14,8,17]"; 
-        window.location = "search.html";
+        var gameNumber = "";
+        for(var i = 0; i<6; i++){
+            gameNumber += Math.floor((Math.random() * 10));
+            if(i==2) gameNumber += " ";
+        }
+        localStorage.gameNumber = gameNumber;
+        window.location = "number.html";
     });
 
     $("#agreeToCookies").on("touchup click",function(){

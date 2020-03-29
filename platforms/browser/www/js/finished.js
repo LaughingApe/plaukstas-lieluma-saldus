@@ -287,6 +287,8 @@ function generateScore(){
 }
 
 $(document).ready(function(){
+    document.getElementById("numberPlace").innerHTML = localStorage.getItem("gameNumber");
+    
     $.getJSON( "correct-answers.json", function( json ) {
         correct = json;
         generateScore();
