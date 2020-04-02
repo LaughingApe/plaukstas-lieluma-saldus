@@ -66,6 +66,10 @@ body.centered-flex {
   text-align: center;
   font-weight: bold;
 }
+.button.danger {
+  background-color: #ffe0cd;
+  border: 1vw solid #eb4b26;
+}
 .button.primary {
   background-color: #fffcf4;
   border: 1vw solid #ffda13;
@@ -152,10 +156,10 @@ body.centered-flex {
   font-size: 5vw;
 }
 
-.button#skiptasks {
+.search-button-container {
   position: absolute;
   bottom: 0vh;
-  width: 60vw;
+  width: 100%;
 }
 
 .logos {
@@ -473,6 +477,14 @@ body.centered-flex {
   padding-bottom: 0.1em;
   background-color: #ffb;
   border-radius: 0px 0px 1em 1em;
+}
+
+.help-list {
+  padding-left: 1rem;
+}
+.help-list li {
+  font-family: "serif-font", serif;
+  padding-left: 0.1rem;
 }
 
 /*# sourceMappingURL=style.css.map */
