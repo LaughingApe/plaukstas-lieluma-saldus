@@ -78,6 +78,10 @@ body.centered-flex {
   margin-bottom: 6vw;
 }
 
+a.inline-link {
+  color: #7f560a;
+}
+
 .icon {
   width: 40vw;
   margin: 5vh 30vw;
