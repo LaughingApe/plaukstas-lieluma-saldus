@@ -55,6 +55,9 @@ function checkPosition(position){
     $("#distance").html( Math.max(0,dist)+"m" );
     
     if( dist<=0 ){
+        var tasksUnlocked = localStorage.getItem("tasksUnlocked");
+        tasksUnlocked[closestId] = 1;
+        localStorage.setItem("tasksUnlocked", tasksUnlocked);
         window.location = "tasks/task"+closestId+".html";
     }
 }

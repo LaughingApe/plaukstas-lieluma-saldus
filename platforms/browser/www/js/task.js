@@ -1,9 +1,15 @@
 var num;
 
+
 function getTaskNumber(){
     var metaNumber = document.getElementById('task-number');
     num = metaNumber.getAttribute("content");
 }
+
+
+// Aizsardzība pret patvaļīgu piekļūšanu uzdevumiem
+var tasksUnlocked = localStorage.getItem("tasksUnlocked");
+if( tasksUnlocked[getTaskNumber()]!=1 ) window.location = "../search.html";
 
 function saveResult(){
     var solvedArr = JSON.parse( localStorage.getItem("tasksSolved") );
