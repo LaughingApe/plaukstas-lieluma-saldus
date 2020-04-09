@@ -55,9 +55,9 @@ function checkPosition(position){
     $("#distance").html( Math.max(0,dist)+"m" );
     
     if( dist<=0 ){
-        var tasksUnlocked = localStorage.getItem("tasksUnlocked");
+        var tasksUnlocked = JSON.parse( localStorage.getItem("tasksUnlocked") );
         tasksUnlocked[closestId] = 1;
-        localStorage.setItem("tasksUnlocked", tasksUnlocked);
+        localStorage.setItem("tasksUnlocked", JSON.stringify(tasksUnlocked) );
         window.location = "tasks/task"+closestId+".html";
     }
 }
@@ -105,7 +105,7 @@ $(document).ready(function(){
 
     $.getJSON( "locations.json", function( json ) {
         locations = json;
-    });  
+    });
     $("#skiptasks").on("touchend",skiptasks);
 
     searchPosition();

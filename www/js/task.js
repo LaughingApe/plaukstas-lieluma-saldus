@@ -8,8 +8,10 @@ function getTaskNumber(){
 
 
 // Aizsardzība pret patvaļīgu piekļūšanu uzdevumiem
-var tasksUnlocked = JSON.parse( localStorage.getItem("tasksUnlocked") );
-if( tasksUnlocked[getTaskNumber()]!=1 ) window.location = "../search.html";
+function defendAgainstRandomTaskAccess(){
+    var tasksUnlocked = JSON.parse( localStorage.getItem("tasksUnlocked") );
+    if( tasksUnlocked[num]!=1 ) window.location = "../search.html";
+}
 
 function saveResult(){
     var solvedArr = JSON.parse( localStorage.getItem("tasksSolved") );
@@ -169,6 +171,7 @@ function saveResult(){
 
 $(document).ready(function(){
     getTaskNumber();
+    defendAgainstRandomTaskAccess();
 
     $("#saveAnswerBtn").on("click",saveResult);
 
