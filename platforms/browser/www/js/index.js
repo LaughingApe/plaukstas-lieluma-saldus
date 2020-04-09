@@ -1,7 +1,5 @@
 $(document).ready(function(){
-    if (localStorage.getItem("gameState") === null) {
-        localStorage.gameState = 0;
-    } else {
+    if (localStorage.getItem("gameState") !== null ) {
         if( localStorage.getItem("gameState") == 1) window.location = "search.html";
         if( localStorage.getItem("gameState") == 2) window.location = "finished.html";
     }
