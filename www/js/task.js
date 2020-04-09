@@ -166,6 +166,10 @@ function saveResult(){
 
     }
 
+    var tasksUnlocked = JSON.parse( localStorage.getItem("tasksUnlocked") );
+    tasksUnlocked[num] = 2;
+    localStorage.setItem("tasksUnlocked", JSON.stringify(tasksUnlocked) );
+
     window.location = "../search.html";
 }
 
