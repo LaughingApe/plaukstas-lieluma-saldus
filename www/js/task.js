@@ -8,7 +8,7 @@ function getTaskNumber(){
 
 
 // Aizsardzība pret patvaļīgu piekļūšanu uzdevumiem
-var tasksUnlocked = localStorage.getItem("tasksUnlocked");
+var tasksUnlocked = JSON.parse( localStorage.getItem("tasksUnlocked") );
 if( tasksUnlocked[getTaskNumber()]!=1 ) window.location = "../search.html";
 
 function saveResult(){
