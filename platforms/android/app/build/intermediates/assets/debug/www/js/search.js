@@ -98,11 +98,11 @@ function skiptasks(){
 }
 
 $(document).ready(function(){
+    document.getElementById("numberPlace").innerHTML = localStorage.getItem("gameNumber");
+
     $.getJSON( "locations.json", function( json ) {
         locations = json;
-    });
-      
-
+    });  
     $("#skiptasks").on("touchend",skiptasks);
 
     searchPosition();

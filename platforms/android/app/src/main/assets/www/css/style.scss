@@ -40,11 +40,22 @@ body{
         overflow: hidden;
     }
     float: left;
+
+    &.centered-flex{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}
+
+.center{
+    text-align:center;
 }
 
 .button{
     display: block;
-    margin: 6vw 20vw;
+    margin: 0vw 20vw;
+    margin-top: 6vw;
     padding: 2vw;
     font-size: 5vw;
 
@@ -59,10 +70,21 @@ body{
     text-align: center;
     font-weight: bold;
 
+    &.danger{
+        background-color: #ffe0cd;
+        border: 1vw solid #eb4b26;
+    }
     &.primary{
         background-color: #fffcf4;
         border: 1vw solid #ffda13;
     }
+    &.bottom{
+        margin-bottom:6vw;
+    }
+}
+
+a.inline-link{
+    color: #7f560a;
 }
 
 .icon{
@@ -140,10 +162,10 @@ body{
     font-size: 5vw;
 }
 
-.button#skiptasks{
+.search-button-container{
     position: absolute;
     bottom: 0vh;
-    width: 60vw;
+    width: 100%;
 }
 
 .logos{
@@ -232,6 +254,7 @@ body{
 .container{
     padding: 5vw;
     margin: 6vw;
+    margin-bottom: 0vw;
     border-radius: 2vw;
 
     background-color: #fff3cd;
@@ -291,7 +314,9 @@ body{
         font-size: 4vw;
         line-height: 1.1;
     }
-    
+    .button:last-child{
+        margin-bottom: 6vw;
+    }
 }
 
 .reading{
@@ -448,6 +473,7 @@ body{
             }
         }
     }
+
 }
 
 .images-check-list{
@@ -478,4 +504,29 @@ body{
 
     border-radius: 2vw;
     box-shadow: 0vw 0.5vw 2vw 0vw rgba(0,0,0,0.4);  
+}
+
+.number-big{
+    text-align: center;
+    font-size: 2.6rem;
+    font-weight: bold;
+}
+
+.gamenumber-sign{
+    text-align: center;
+    span{
+        padding: 0.8em;
+        padding-bottom: 0.1em;
+
+        background-color: #ffb;
+        border-radius: 0px 0px 1em 1em;
+    }
+}
+
+.help-list{
+    padding-left: 1rem;
+    li{
+        font-family: 'serif-font', serif;
+        padding-left: 0.1rem;
+    }
 }

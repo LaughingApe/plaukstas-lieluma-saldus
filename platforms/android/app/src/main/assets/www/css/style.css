@@ -40,10 +40,20 @@ body {
 body.search-page {
   overflow: hidden;
 }
+body.centered-flex {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.center {
+  text-align: center;
+}
 
 .button {
   display: block;
-  margin: 6vw 20vw;
+  margin: 0vw 20vw;
+  margin-top: 6vw;
   padding: 2vw;
   font-size: 5vw;
   background-color: #fff3cd;
@@ -56,9 +66,20 @@ body.search-page {
   text-align: center;
   font-weight: bold;
 }
+.button.danger {
+  background-color: #ffe0cd;
+  border: 1vw solid #eb4b26;
+}
 .button.primary {
   background-color: #fffcf4;
   border: 1vw solid #ffda13;
+}
+.button.bottom {
+  margin-bottom: 6vw;
+}
+
+a.inline-link {
+  color: #7f560a;
 }
 
 .icon {
@@ -139,10 +160,10 @@ body.search-page {
   font-size: 5vw;
 }
 
-.button#skiptasks {
+.search-button-container {
   position: absolute;
   bottom: 0vh;
-  width: 60vw;
+  width: 100%;
 }
 
 .logos {
@@ -218,6 +239,7 @@ body.search-page {
 .container {
   padding: 5vw;
   margin: 6vw;
+  margin-bottom: 0vw;
   border-radius: 2vw;
   background-color: #fff3cd;
   box-shadow: 0vw 0.5vw 2vw 0vw rgba(0, 0, 0, 0.4);
@@ -267,6 +289,9 @@ body.search-page {
   margin-bottom: 2vh;
   font-size: 4vw;
   line-height: 1.1;
+}
+.reading .button:last-child, .task .button:last-child {
+  margin-bottom: 6vw;
 }
 
 .reading .reading-block {
@@ -440,6 +465,30 @@ body.search-page {
   margin-bottom: 0;
   border-radius: 2vw;
   box-shadow: 0vw 0.5vw 2vw 0vw rgba(0, 0, 0, 0.4);
+}
+
+.number-big {
+  text-align: center;
+  font-size: 2.6rem;
+  font-weight: bold;
+}
+
+.gamenumber-sign {
+  text-align: center;
+}
+.gamenumber-sign span {
+  padding: 0.8em;
+  padding-bottom: 0.1em;
+  background-color: #ffb;
+  border-radius: 0px 0px 1em 1em;
+}
+
+.help-list {
+  padding-left: 1rem;
+}
+.help-list li {
+  font-family: "serif-font", serif;
+  padding-left: 0.1rem;
 }
 
 /*# sourceMappingURL=style.css.map */

@@ -14,7 +14,9 @@ function generateAnswerView(){
             continue;
         }
 
-        var ans = JSON.parse( localStorage.getItem("answer" + i) );
+        var ans = null;
+        if( localStorage.getItem("answer" + i)!==null && localStorage.getItem("answer" + i)!=="" ) 
+            ans = JSON.parse( localStorage.getItem("answer" + i) );
 
         switch(i){
             case 0:
@@ -179,7 +181,9 @@ function generateScore(){
 
     for(var i = 0; i<solvedArr.length; i++){
         if( solvedArr[i]==0 ) continue;
-        var ans = JSON.parse( localStorage.getItem("answer" + i) );
+        var ans = null;
+        if( localStorage.getItem("answer" + i)!==null && localStorage.getItem("answer" + i)!=="" ) 
+            ans = JSON.parse( localStorage.getItem("answer" + i) );
 
         var c = correct[i];
 
@@ -287,6 +291,8 @@ function generateScore(){
 }
 
 $(document).ready(function(){
+    document.getElementById("numberPlace").innerHTML = localStorage.getItem("gameNumber");
+    
     $.getJSON( "correct-answers.json", function( json ) {
         correct = json;
         generateScore();
