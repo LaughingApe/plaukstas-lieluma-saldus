@@ -11,7 +11,6 @@ $(document).ready(function(){
     }
 
     $("#startGameBtn").on("touchup click",function(){
-        localStorage.gameState = 1;
         localStorage.tasksSolved = "[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]";
         localStorage.tasksUnlocked = "[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]";
         localStorage.taskOrder = "[3,11,2,0,1,10,7,9,13,12,16,4,6,15,14,8,17]"; 
