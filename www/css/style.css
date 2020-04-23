@@ -491,4 +491,14 @@ body.centered-flex {
   padding-left: 0.1rem;
 }
 
+.correct-answer {
+  color: #3d7a24;
+  font-weight: bold;
+}
+
+.wrong-answer {
+  color: #801c1c;
+  text-decoration: dashed;
+}
+
 /*# sourceMappingURL=style.css.map */

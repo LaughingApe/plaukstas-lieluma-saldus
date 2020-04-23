@@ -23,38 +23,65 @@ function generateAnswerView(){
 
         switch(i){
             case 0:
+                var correctClass = [], correcectAnswer = [];
+                for(var j in cor){
+                    correctClass[j] = (ans[j]==cor[j])?"correct-answer":"wrong-answer";
+                    correcectAnswer[j] = (ans[j]==cor[j])?"":(" (pareizi: "+cor[j]+")");
+                }
                 content += '<img src="img/task0/jrozentals-task.png" class="big-img"/>';
-                content += '<p>Rozentāla māte jaunībā — <i>' + ans[0] + "</i><br/>";
-                content += 'Rozentāla tēvs jaunībā — <i>' + ans[1] + "</i><br/>";
-                content += 'Rozentāla māte vecumdienās — <i>' + ans[2] + "</i><br/>";
-                content += 'Rozentāla tēvs vecumdienās — <i>' + ans[3] + "</i><br/>";
-                content += 'Skolotājs Štammers — <i>' + ans[4] + "</i><br/>";
-                content += 'Kaimiņš, turīgais „Putru” māju saimnieks — <i>' + ans[5] + "</i><br/></p>";
+                content += '<p>Rozentāla māte jaunībā — <i class="' + correctClass[0] + '">' + ans[0] + "</i>" + correcectAnswer[0] + "<br/>";
+                content += 'Rozentāla tēvs jaunībā — <i class="' + correctClass[1] + '">' + ans[1] + "</i>" + correcectAnswer[1] + "<br/>";
+                content += 'Rozentāla māte vecumdienās — <i class="' + correctClass[2] + '">' + ans[2] + "</i>" + correcectAnswer[2] + "<br/>";
+                content += 'Rozentāla tēvs vecumdienās — <i class="' + correctClass[3] + '">' + ans[3] + "</i>" + correcectAnswer[3] + "<br/>";
+                content += 'Skolotājs Štammers — <i class="' + correctClass[4] + '">' + ans[4] + "</i>" + correcectAnswer[4] + "<br/>";
+                content += 'Kaimiņš, turīgais „Putru” māju saimnieks — <i class="' + correctClass[5] + '">' + ans[5] + "</i>" + correcectAnswer[5] + "<br/></p>";
                 break;
             case 1:
                 content += '<p>Baznīcu attēli hronoloģiskā secībā.</p>';
-                for(var j = 0; j<4; j++)
+                content += '<p class="center"><b>Secība tavā atbildē:</b></p>';
+                for(var j in ans)
                     content += '<img src="img/task1/church' + ans[j] + '.jpg" class="centered-img"/>';
+                content += '<p class="center"><b>Pareizā secība:</b></p>';
+                for(var j in cor)
+                    content += '<img src="img/task1/church' + cor[j] + '.jpg" class="centered-img"/>';
                 break;
             case 2:
                 content += '<p>Vecvārdi.</p>';   
                 var displayOrder = [1,2,0,4,3,6,5];
                 var words = ['šķiņķis','naģe','bambāle','grāpis','rinduks','ambīlis','čočis'];
-                for(var j = 0; j<7; j++){
-                    var u = displayOrder[j];
-                    content += '<div class="img-title">' + words[u] + '</div>';
+                content += '<p class="center"><b>Tavas atbildes:</b></p>';
+                
+                var correctClass = [];
+                for(var u of displayOrder){
+                    correctClass[u] = (ans[u]==cor[u])?"correct-answer":"wrong-answer";
+                }
+                for(var u of displayOrder){
+                    content += '<div class="img-title ' + correctClass[u] + '">' + words[u] + '</div>';
                     content += '<img src="img/task2/img' + ans[u] + '.jpg" class="centered-img"/>';
+                }
+                content += '<p class="center"><b>Pareizās atbildes:</b></p>';
+                for(var u of displayOrder){
+                    content += '<div class="img-title">' + words[u] + '</div>';
+                    content += '<img src="img/task2/img' + cor[u] + '.jpg" class="centered-img"/>';
                 }
                 break;
             case 3:
                 content += '<p>Cik reižu dziesmas „Saldus saule” piedziedājumā minēts vārds „saule”?</p>';
-                content += '<div class="answer-number"><i>' + ans + '</i></div>';
+                if( ans==cor )
+                    content += '<div class="answer-number"><i class="correct-answer">' + ans + '</i></div>';
+                else 
+                    content += '<div class="answer-number"><i class="wrong-answer">' + ans + '</i> (pareizi: ' + cor + ')</div>';
                 break;
             case 4:
                 content += '<p>Cik pavisam kopā šūniņu ir redzamas strūklakā?</p>';
-                content += '<div class="answer-number"><i>' + ans + '</i></div>';
+                if( ans==cor )
+                    content += '<div class="answer-number"><i class="correct-answer">' + ans + '</i></div>';
+                else 
+                    content += '<div class="answer-number"><i class="wrong-answer">' + ans + '</i> (pareizi: ' + cor + ')</div>';
+                break;
                 break;
             case 5:   
+                // ŠIS UZDEVUMS IR IZŅEMTS
                 var words = ['austas','mezglotas','adītas','tamborētas'];
                 for(var j = 0; j<4; j++){
                     if( ans[j]==1 ){
@@ -68,21 +95,36 @@ function generateAnswerView(){
                 var displayOrder = [5,0,2,3,4,1];
                 var titles = ['Uzsniga sniedziņš balts','Aprīļa pilieni','Lilioma dziesma','Jānītis ir vēl mazs','Dzeguzes balss','Pilsētā, kurā piedzimst vējš'];
                 var contents = ['Uzsniga sniedziņš balts','Aprīlim, aprīlim','Atkal, atkal ir debesis pušu','Jānītis ir vēl mazs','Starp mašīnām, motoriem, meitenēm','Pilsētā, kurā piedzimst vējš'];
-                for(var j = 0; j<6; j++){
-                    var u = displayOrder[j];
-                    content += '<div class="img-title"><i>' + titles[u] + '</i></div>';
+                
+                var correctClass = [], correcectAnswer = [];
+                for(var u of displayOrder){
+                    correctClass[u] = (ans[u]==cor[u])?"correct-answer":"wrong-answer";
+                    correcectAnswer[u] = (ans[u]==cor[u])?"":("<br/>(pareizi: "+titles[cor[u]]+")");
+                }
+                for(var u of displayOrder){
+                    content += '<div class="img-title"><i class="' + correctClass[u] + '">' + titles[ans[u]] + '</i>' + correcectAnswer[u] + '</div>';
                     content += '<div class="center-text">' + contents[u] + '...</div>';
                 }
                 break;
             case 7:
                 content += '<p>Saldus bites ķermeņa daļas.</p>';
                 var words = ['spārni','dzelonis','taustekļi','kājas'];
+                content += '<p><b>Tava atbilde:</b></p>';
                 content += '<p><i>';
                 var b = false;
                 for(var j = 0; j<4; j++){
                     if( ans[j]==1 ){
                         if(b==true) {content += ', ';} else b = true;
-
+                        content += words[j];
+                    }
+                }
+                content += '</i></p>';
+                content += '<p><b>Pareizā atbilde:</b></p>';
+                content += '<p><i>';
+                var b = false;
+                for(var j = 0; j<4; j++){
+                    if( cor[j]==1 ){
+                        if(b==true) {content += ', ';} else b = true;
                         content += words[j];
                     }
                 }
@@ -91,21 +133,37 @@ function generateAnswerView(){
             case 8:
                 content += '<p>Kādēļ bļodas sakusušas kopā?</p>';
                 var words = ['Pārāk liels trauku mitrums','Pārāk zema kurināšanas temperatūra','Pārāk augsta kurināšanas temperatūra','Neveiksmīgs trauku izvietojums ceplī'];
-                content += '<p><i>';
-                for(var i = 0; i<4; i++)
-                    if( ans[i]==1 )
-                        content += words[i];
-                content += '</i></p>';
+                var correctNum = 0;
+                var answerNum = 0;
+                for(var j in ans){ 
+                    if( ans[j] == 1 ) answerNum = j;
+                    if( cor[j] == 1 ) correctNum = j;
+                }
+                if( answerNum==correctNum )
+                    content += '<p><i class="correct-answer">'+words[answerNum]+'</i></p>';
+                else{
+                    content += '<p><i class="wrong-answer">'+words[answerNum]+'</i><br/>Pareizi: ' + words[correctNum] + '</p>';
+                }
                 break;
             case 9:
                 content += '<p>Kuras zivis nedzīvo Ciecerē?</p>';
                 var words = ['asaris','līdaka','rauda','sams','vēdzele','ķīsis','lasis','alata','grundulis','akmeņgrauzis'];
+                content += '<p><b>Tava atbilde:</b></p>';
                 content += '<p><i>';
                 var b = false;
-                for(var j = 0; j<9; j++){
+                for(var j in ans){
                     if( ans[j]==1 ){
                         if(b==true) {content += ', ';} else b = true;
-
+                        content += words[j];
+                    }
+                }
+                content += '</i></p>';
+                content += '<p><b>Pareizā atbilde:</b></p>';
+                content += '<p><i>';
+                var b = false;
+                for(var j in cor){
+                    if( cor[j]==1 ){
+                        if(b==true) {content += ', ';} else b = true;
                         content += words[j];
                     }
                 }
@@ -114,60 +172,127 @@ function generateAnswerView(){
             case 10:
                 content += '<p>Fasādei atbilstošā glezna.</p>';
                 content += '<img src="img/task10-11-12/fasade0.jpg" class="centered-img"/>';
-                var paintingNr = 0;
-                for(var i = 0; i<3; i++) if(ans[i]==1) paintingNr = i;
-                content += '<img src="img/task10-11-12/painting' + paintingNr + '.jpg" class="centered-img"/>';
+                var answerNum = 0;
+                var correctNum = 0;
+                for(var j in ans){
+                    if(ans[j]==1) answerNum = j;
+                    if(cor[j]==1) correctNum = j;
+                }
+                if( answerNum==correctNum ){
+                    content += '<img src="img/task10-11-12/painting' + answerNum + '.jpg" class="centered-img"/>';
+                } else {
+                    content += '<p class="center"><b>Tava atbilde:</b></p>';
+                    content += '<img src="img/task10-11-12/painting' + answerNum + '.jpg" class="centered-img"/>';
+                    content += '<p class="center"><b>Pareizā atbilde:</b></p>';
+                    content += '<img src="img/task10-11-12/painting' + correctNum + '.jpg" class="centered-img"/>';
+                }
                 break;
             case 11:
                 content += '<p>Fasādei atbilstošā glezna.</p>';
                 content += '<img src="img/task10-11-12/fasade1.png" class="centered-img"/>';
-                var paintingNr = 0;
-                for(var i = 0; i<3; i++) if(ans[i]==1) paintingNr = i;
-                content += '<img src="img/task10-11-12/painting' + paintingNr + '.jpg" class="centered-img"/>';
+                var answerNum = 0;
+                var correctNum = 0;
+                for(var j in ans){
+                    if(ans[j]==1) answerNum = j;
+                    if(cor[j]==1) correctNum = j;
+                }
+                if( answerNum==correctNum ){
+                    content += '<img src="img/task10-11-12/painting' + answerNum + '.jpg" class="centered-img"/>';
+                } else {
+                    content += '<p class="center"><b>Tava atbilde:</b></p>';
+                    content += '<img src="img/task10-11-12/painting' + answerNum + '.jpg" class="centered-img"/>';
+                    content += '<p class="center"><b>Pareizā atbilde:</b></p>';
+                    content += '<img src="img/task10-11-12/painting' + correctNum + '.jpg" class="centered-img"/>';
+                }
                 break;
             case 12:
                 content += '<p>Fasādei atbilstošā glezna.</p>';
                 content += '<img src="img/task10-11-12/fasade2.jpg" class="centered-img"/>';
-                var paintingNr = 0;
-                for(var i = 0; i<3; i++) if(ans[i]==1) paintingNr = i;
-                content += '<img src="img/task10-11-12/painting' + paintingNr + '.jpg" class="centered-img"/>';
+                var answerNum = 0;
+                var correctNum = 0;
+                for(var j in ans){
+                    if(ans[j]==1) answerNum = j;
+                    if(cor[j]==1) correctNum = j;
+                }
+                if( answerNum==correctNum ){
+                    content += '<img src="img/task10-11-12/painting' + answerNum + '.jpg" class="centered-img"/>';
+                } else {
+                    content += '<p class="center"><b>Tava atbilde:</b></p>';
+                    content += '<img src="img/task10-11-12/painting' + answerNum + '.jpg" class="centered-img"/>';
+                    content += '<p class="center"><b>Pareizā atbilde:</b></p>';
+                    content += '<img src="img/task10-11-12/painting' + correctNum + '.jpg" class="centered-img"/>';
+                }
                 break;
             case 13:
                 content += '<p>Cik iekšpagalmu ir Saldus mūzikas un mākslas skolai?</p>';
-                content += '<div class="answer-number"><i>' + ans + '</i></div>';
+                if( ans==cor )
+                    content += '<div class="answer-number"><i class="correct-answer">' + ans + '</i></div>';
+                else 
+                    content += '<div class="answer-number"><i class="wrong-answer">' + ans + '</i> (pareizi: ' + cor + ')</div>';
                 break;
             case 14:   
                 var displayOrder = [7,0,9,2,3,4,10,5,6,8,1];
                 var words = ['Līga Zeļģe','Liene Gāliņa','Edgars Pujāts','Marģers Eglinskis','Agnese Jēkabsone','Gints Grāvelis','Mārtiņš Liepa','Jānis Blūms','Andris Ērglis','Kristaps Sotnieks','Līga Velvere'];
-                for(var j = 0; j<11; j++){
-                    var u = displayOrder[j];
-                    content += '<div class="img-title">' + words[u] + '</div>';
+ 
+                var correctClass = [];
+                for(var u of displayOrder){
+                    correctClass[u] = (ans[u]==cor[u])?"correct-answer":"wrong-answer";
+                }
+                for(var u of displayOrder){
+                    content += '<div class="img-title"><i class="' + correctClass[u] + '">' + words[u] + '</i></div>';
+                    if(ans[u]!=cor[u]) content += '<p class="center">Tava atbilde:<br/></p>';
                     content += '<img src="img/task14/cilv' + ans[u] + '.jpg" class="centered-img"/>';
+                    if(ans[u]!=cor[u]){
+                        content += '<p class="center">Pareizā atbilde:<br/></p>';
+                        content += '<img src="img/task14/cilv' + cor[u] + '.jpg" class="centered-img"/>';
+                    }
                 }
                 break;
             case 15:
                 content += '<p>Kuras gleznas nav J. Rozentāla darbi?</p>';
                 var titles = ['Tirgus','Princese ar pērtiķi','Pavasarī','Studija gleznai (Itālija)','Pašportrets','Kristus svētī bērniņus','Miests Kurzemē','Peldētāji zēni'];
-                for(var i = 0; i<8; i++){
-                    if( ans[i]==1 ){
-                        content += '<div class="img-title"><i>' + titles[i] + '</i></div>';
-                        content += '<img src="img/task15/p' + i + '.jpg" class="centered-img"/>';
+                content += '<p class="center"><b>Tavas atbildes:</b></p>';
+                for(var j in ans){
+                    if( ans[j]==1 ){
+                        var correctnessClass = (ans[j]==cor[j])?"correct-answer":"wrong-answer";
+                        content += '<div class="img-title"><i class="' + correctnessClass + '">' + titles[j] + '</i></div>';
+                        content += '<img src="img/task15/p' + j + '.jpg" class="centered-img"/>';
+                    }
+                }
+                content += '<p class="center"><b>Pareizās atbildes:</b></p>';
+                for(var j in cor){
+                    if( cor[j]==1 ){
+                        content += '<div class="img-title"><i>' + titles[j] + '</i></div>';
+                        content += '<img src="img/task15/p' + j + '.jpg" class="centered-img"/>';
                     }
                 }
                 break;
             case 16:
                 content += '<p>Autobusa pieturai tuvākais koks.</p>';
                 var titles = ['Baltais zīdkoks','Parastā apse','Parastais dižskābardis','Parastā goba'];
-                for(var i = 0; i<4; i++){
-                    if( ans[i]==1 ){
-                        content += '<div class="img-title"><i>' + titles[i] + '</i></div>';
-                        content += '<img src="img/task16/k' + i + '.jpg" class="centered-img"/>';
+                content += '<p class="center"><b>Tava atbilde:</b></p>';
+                for(var j in ans){
+                    if( ans[j]==1 ){
+                        var correctnessClass = (ans[j]==cor[j])?"correct-answer":"wrong-answer";
+                        content += '<div class="img-title"><i class="' + correctnessClass + '">' + titles[j] + '</i></div>';
+                        content += '<img src="img/task16/k' + j + '.jpg" class="centered-img"/>';
+                    }
+                }
+                content += '<p class="center"><b>Pareizā atbilde:</b></p>';
+                for(var j in ans){
+                    if( cor[j]==1 ){
+                        content += '<div class="img-title"><i>' + titles[j] + '</i></div>';
+                        content += '<img src="img/task16/k' + j + '.jpg" class="centered-img"/>';
                     }
                 }
                 break;
             case 17:
                 content += '<p>Ziedlapiņas uz durvīm</p>';
-                content += '<div class="answer-number"><i>' + ans + '</i></div>';
+                if( ans==cor )
+                    content += '<div class="answer-number"><i class="correct-answer">' + ans + '</i></div>';
+                else 
+                    content += '<div class="answer-number"><i class="wrong-answer">' + ans + '</i> (pareizi: ' + cor + ')</div>';
+                break;
                 break;
         }
 
