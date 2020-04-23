@@ -1,4 +1,5 @@
-var maxscore = [6,3,7,1,1,1,6,4,1,'4,5',1,1,1,1,'5,5',4,1,1];
+var score = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+var maxscore = [6,3,7,1,1,1,6,4,1,'4.5',1,1,1,1,'5.5',4,1,1];
 var correct;
 
 function generateAnswerView(){
@@ -8,7 +9,7 @@ function generateAnswerView(){
     var taskOrder = JSON.parse( localStorage.getItem("taskOrder") );
     for(var ind = 0; ind<taskOrder.length; ind++){
         i = taskOrder[ind];
-        content += "<b style='display:block;'>" + (ind+1) + ". uzdevums (maks. punkti — " + maxscore[i] + ")</b>";
+        content += "<b style='display:block;'>" + (ind+1) + ". uzdevums (" + score[i] + "/" + maxscore[i] + ")</b>";
         if( solvedArr[i]==0 ){
             content += "<p>Šo uzdevumu neesat izpildījuši.</p>";
             continue;
@@ -17,6 +18,8 @@ function generateAnswerView(){
         var ans = null;
         if( localStorage.getItem("answer" + i)!==null && localStorage.getItem("answer" + i)!=="" ) 
             ans = JSON.parse( localStorage.getItem("answer" + i) );
+
+        var cor = correct[i];
 
         switch(i){
             case 0:
@@ -176,7 +179,7 @@ function generateAnswerView(){
 function generateScore(){
     var content = "<h1 style='text-align:center;'>Iegūtie punkti</h1>";
 
-    var score = 0;
+    var totalScore = 0;
     var solvedArr = JSON.parse( localStorage.getItem("tasksSolved") );
 
     for(var i = 0; i<solvedArr.length; i++){
@@ -187,12 +190,10 @@ function generateScore(){
 
         var c = correct[i];
 
-        //content += 'Pirms ' + i + ': ' + score + '<br/>';
-
         switch(i){
             case 0: 
                 for(var j = 0; j<6; j++) 
-                    if(ans[j]==c[j]) score++;
+                    if(ans[j]==c[j]) score[i]++;
                 break;
             case 1:
                 var order = [];
@@ -203,90 +204,91 @@ function generateScore(){
                         if( ans[j]<ans[k] ) u++;
                     }
                 }
-                score += u/2.0;
+                score[i] += u/2.0;
                 break;
             case 2:
                 for(var j = 0; j<7; j++) 
-                    if(ans[j]==c[j]) score++;
+                    if(ans[j]==c[j]) score[i]++;
                 break;
             case 3:
-                if( ans==c ) score++; 
+                if( ans==c ) score[i]++; 
                 break;
             case 4:
-                if( ans==c ) score++; 
+                if( ans==c ) score[i]++; 
                 break;
             case 5:
-                u = 1;
+                var u = 1;
                 for(var j = 0; j<4; j++) 
                     if(ans[j]!=c[j]) u = 0;
-                score += u;
+                score[i] += u;
                 break;
             case 6:
                 for(var j = 0; j<6; j++) 
-                    if(ans[j]==c[j]) score++;
+                    if(ans[j]==c[j]) score[i]++;
                 break;
             case 7:
                 for(var j = 0; j<4; j++) 
-                    if(ans[j]==c[j]) score++;
+                    if(ans[j]==c[j]) score[i]++;
                 break;
             case 8:
                 var u = 1;
                 for(var j = 0; j<4; j++) 
                     if(ans[j]!=c[j]) u = 0;
-                score += u;
+                score[i] += u;
                 break;
             case 9:
                 var u = 0;
                 for(var j = 0; j<9; j++)
                     if(ans[j]==c[j]) u += 0.5;
-                score += u;
+                score[i] += u;
                 break;
             case 10:
                 var u = 1;
                 for(var j = 0; j<3; j++) 
                     if(ans[j]!=c[j]) u = 0;
-                score += u;
+                score[i] += u;
                 break;
             case 11:
                 var u = 1;
                 for(var j = 0; j<3; j++) 
                     if(ans[j]!=c[j]) u = 0;
-                score += u;
+                score[i] += u;
                 break;
             case 12:
                 var u = 1;
                 for(var j = 0; j<3; j++) 
                     if(ans[j]!=c[j]) u = 0;
-                score += u;
+                score[i] += u;
                 break;
             case 13:
-                if( ans==c ) score++; 
+                if( ans==c ) score[i]++; 
                 break;
             case 14:
                 var u = 0;
                 for(var j = 0; j<11; j++)
                     if(ans[j]==c[j]) u += 0.5;
-                score += u;
+                score[i] += u;
                 break;
             case 15:
                 var u = 0;
                 for(var j = 0; j<8; j++)
                     if(ans[j]==c[j]) u += 0.5;
-                score += u;
+                score[i] += u;
                 break;
             case 16:
                 var u = 1;
                 for(var j = 0; j<4; j++) 
                     if(ans[j]!=c[j]) u = 0;
-                score += u;
+                score[i] += u;
                 break;
             case 17:
-                if( ans==c ) score++; 
+                if( ans==c ) score[i]++; 
                 break;
         }
     }
+    for(var s of score) totalScore+=s;
 
-    content += '<div class="answer-number score"><b>' + score + '</b></div>';
+    content += '<div class="answer-number score"><b>' + totalScore + '</b></div>';
     document.getElementById('score-box').innerHTML = content;
 }
 
