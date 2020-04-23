@@ -283,7 +283,7 @@ body{
         text-transform: uppercase;
         text-align: center;
         font-weight: bold;
-        margin-top: 2vh;
+        margin-top: 2.5vh;
         margin-bottom: 1vh;
     }
 
@@ -538,4 +538,16 @@ body{
 .wrong-answer{
     color: #801c1c;
     text-decoration: dashed;
+}
+
+.result-image-grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 5%;
+    .in-grid-img{
+        width: 100%;
+    }
+    p{
+        margin-top: 0px;
+    }
 }

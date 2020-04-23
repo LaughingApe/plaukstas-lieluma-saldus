@@ -49,21 +49,22 @@ function generateAnswerView(){
                 content += '<p>Vecvārdi.</p>';   
                 var displayOrder = [1,2,0,4,3,6,5];
                 var words = ['šķiņķis','naģe','bambāle','grāpis','rinduks','ambīlis','čočis'];
-                content += '<p class="center"><b>Tavas atbildes:</b></p>';
                 
                 var correctClass = [];
                 for(var u of displayOrder){
                     correctClass[u] = (ans[u]==cor[u])?"correct-answer":"wrong-answer";
                 }
+
                 for(var u of displayOrder){
-                    content += '<div class="img-title ' + correctClass[u] + '">' + words[u] + '</div>';
-                    content += '<img src="img/task2/img' + ans[u] + '.jpg" class="centered-img"/>';
+                    content += '<div class="img-title"><i class="' + correctClass[u] + '">' + words[u] + '</i></div>';
+                    content += '<div class="result-image-grid">';
+                    content += '<p class="center">Tava atbilde:</p>';
+                    content += '<p class="center">Pareizā atbilde:</p>';
+                    content += '<img src="img/task2/img' + ans[u] + '.jpg" class="in-grid-img"/>';
+                    content += '<img src="img/task2/img' + cor[u] + '.jpg" class="in-grid-img"/>';
+                    content += '</div>'
                 }
-                content += '<p class="center"><b>Pareizās atbildes:</b></p>';
-                for(var u of displayOrder){
-                    content += '<div class="img-title">' + words[u] + '</div>';
-                    content += '<img src="img/task2/img' + cor[u] + '.jpg" class="centered-img"/>';
-                }
+
                 break;
             case 3:
                 content += '<p>Cik reižu dziesmas „Saldus saule” piedziedājumā minēts vārds „saule”?</p>';
@@ -240,12 +241,12 @@ function generateAnswerView(){
                 }
                 for(var u of displayOrder){
                     content += '<div class="img-title"><i class="' + correctClass[u] + '">' + words[u] + '</i></div>';
-                    if(ans[u]!=cor[u]) content += '<p class="center">Tava atbilde:<br/></p>';
-                    content += '<img src="img/task14/cilv' + ans[u] + '.jpg" class="centered-img"/>';
-                    if(ans[u]!=cor[u]){
-                        content += '<p class="center">Pareizā atbilde:<br/></p>';
-                        content += '<img src="img/task14/cilv' + cor[u] + '.jpg" class="centered-img"/>';
-                    }
+                    content += '<div class="result-image-grid">';
+                    content += '<p class="center">Tava atbilde:</p>';
+                    content += '<p class="center">Pareizā atbilde:</p>';
+                    content += '<img src="img/task14/cilv' + ans[u] + '.jpg" class="in-grid-img"/>';
+                    content += '<img src="img/task14/cilv' + cor[u] + '.jpg" class="in-grid-img"/>';
+                    content += '</div>'
                 }
                 break;
             case 15:

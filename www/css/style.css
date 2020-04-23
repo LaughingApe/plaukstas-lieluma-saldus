@@ -264,7 +264,7 @@ body.centered-flex {
   text-transform: uppercase;
   text-align: center;
   font-weight: bold;
-  margin-top: 2vh;
+  margin-top: 2.5vh;
   margin-bottom: 1vh;
 }
 .container .answer-number {
@@ -499,6 +499,18 @@ body.centered-flex {
 .wrong-answer {
   color: #801c1c;
   text-decoration: dashed;
+}
+
+.result-image-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 5%;
+}
+.result-image-grid .in-grid-img {
+  width: 100%;
+}
+.result-image-grid p {
+  margin-top: 0px;
 }
 
 /*# sourceMappingURL=style.css.map */
