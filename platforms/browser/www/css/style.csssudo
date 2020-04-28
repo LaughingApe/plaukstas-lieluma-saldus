@@ -157,7 +157,7 @@ body {
   bottom: 2vw;
   left: 0;
   width: 100%;
-  line-height: 1.2;
+  line-height: 1;
   font-size: 4vw;
   text-align: center;
   color: #96650a; }
@@ -420,4 +420,4 @@ body {
   .result-image-grid p {
     margin-top: 0px; }
 
-/*# sourceMappingURL=style.css.map */
+/*# sourceMappingURL=style.csssudo.map */
