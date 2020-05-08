@@ -88,8 +88,16 @@ function searchPosition(){
     };
 
     //alert("will search!");
-    navigator.geolocation.getCurrentPosition(checkPosition, errorInFinding, { maximumAge: (secondsBetweenGPSChecks-1)*1000, enableHighAccuracy: true });
+    //navigator.geolocation.getCurrentPosition(checkPosition, errorInFinding, { maximumAge: (secondsBetweenGPSChecks-1)*1000, enableHighAccuracy: true });
     //alert("did search!");
+
+    var options = { enableHighAccuracy: true, maximumAge: (secondsBetweenGPSChecks-1)*1000, timeout: secondsBetweenGPSChecks * 1000 };
+    if( navigator.geolocation) {
+        var watchID = navigator.geolocation.watchPosition( checkPosition, errorInFinding, options );
+        var timeout = setTimeout( function() { navigator.geolocation.clearWatch( watchID ); }, secondsBetweenGPSChecks * 1000 );
+    } else {
+        errorInFinding();
+    }
 
     setTimeout(function(){
         searchPosition();
